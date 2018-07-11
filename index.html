@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Transportation Survey</title>
+    <title>Pizza Place</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/custom.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
   </head>
   <body>
@@ -15,36 +15,44 @@
       <form id="build-your-own">
         <div class="form-group">
           <p>What Size?</p>
-          <input type="checkbox" name="size" value="medium"> Meduim $12<br>
-          <input type="checkbox" name="size" value="large"> Large $15<br>
+          <div class="radio">
+          <label>
+          <input type="radio" name="size" value="12" checked> Meduim $12
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="size" value="15"> Large $15
+        </label>
+        </div>
         </div>
         <div class="form-group">
           <p>Add any of these vegetables $1.50 on a Meduim or $2 on a Large:</p>
-          <input type="checkbox" name="veggie" value="olives">Olives<br>
-          <input type="checkbox" name="veggie" value="peppers">Peppers<br>
-          <input type="checkbox" name="veggie" value="onions">Onions<br>
-          <input type="checkbox" name="veggie" value="pineapple">Pineapple<br>
-          <input type="checkbox" name="veggie" value="mushrooms">Mushrooms<br>
-          <input type="checkbox" name="veggie" value="jalapenos">Jalapenos<br>
-          <input type="checkbox" name="veggie" value="artichoke">Artichoke Hearts<br>
-          <input type="checkbox" name="veggie" value="sundried-tomato">Sundried Tomatoes<br>
-          <input type="checkbox" name="veggie" value="zucchini">Zucchini<br>
-          <input type="checkbox" name="veggie" value="roasted-garlic">Roasted garlic<br>
-          <input type="checkbox" name="veggie" value="seasonal">Special Seasonal<br>
+          <input type="checkbox" name="veggie" value="olives"> Olives<br>
+          <input type="checkbox" name="veggie" value="peppers"> Peppers<br>
+          <input type="checkbox" name="veggie" value="onions"> Onions<br>
+          <input type="checkbox" name="veggie" value="pineapple"> Pineapple<br>
+          <input type="checkbox" name="veggie" value="mushrooms"> Mushrooms<br>
+          <input type="checkbox" name="veggie" value="jalapenos"> Jalapenos<br>
+          <input type="checkbox" name="veggie" value="artichoke"> Artichoke Hearts<br>
+          <input type="checkbox" name="veggie" value="sundried-tomato"> Sundried Tomatoes<br>
+          <input type="checkbox" name="veggie" value="zucchini"> Zucchini<br>
+          <input type="checkbox" name="veggie" value="roasted-garlic"> Roasted garlic<br>
+          <input type="checkbox" name="veggie" value="seasonal"> Special Seasonal<br>
         </div>
         <div class="form-group">
           <p>Add some Meat! $2 on a Medium, $3 on a Large:</p>
-          <input type="checkbox" name="meat" value="pepperoni">Pepperoni<br>
-          <input type="checkbox" name="meat" value="salami">Salami<br>
-          <input type="checkbox" name="meat" value="sausage">Sausage<br>
-          <input type="checkbox" name="meat" value="ham">Ham<br>
-          <input type="checkbox" name="meat" value="bacon">Bacon<br>
-          <input type="checkbox" name="meat" value="special">Special<br>
+          <input type="checkbox" name="meat" value="pepperoni"> Pepperoni<br>
+          <input type="checkbox" name="meat" value="salami"> Salami<br>
+          <input type="checkbox" name="meat" value="sausage"> Sausage<br>
+          <input type="checkbox" name="meat" value="ham"> Ham<br>
+          <input type="checkbox" name="meat" value="bacon"> Bacon<br>
+          <input type="checkbox" name="meat" value="special"> Special<br>
         </div>
        <button type="submit">Place Order</button>
       </form>
       <span id="pizza-order">
-        <p><b>You Ordered</b></p>
+        <p><b>You Ordered:</b></p>
       </span>
       <br>
 
