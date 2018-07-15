@@ -31,18 +31,18 @@ Pizza.prototype.price = function() {
 $(document).ready(function() {
   $("form#build-your-own").submit(function(event) {
     event.preventDefault();
-    $("#pizza-order").empty();
+    //$("#pizza-order").empty();
 
+    var newPizza = new Pizza(size, toppings);
     var size = $("input:radio[name=size]:checked").val();
     $("input:checkbox[name=topping]:checked").each(function() {
       var selectedToppings = $(this).val();
       toppings.push(selectedToppings);
     });
-    var newPizza = new Pizza(size, toppings);
     var total = newPizza.price();
-      $("#pizza-size").append(newPizza.size);
-      $("#description").append(newPizza.toppings);
-      $("#order-total").append(total);
-      $("#pizza-order").show();
+    $("#pizza-order").show();
+      $("#pizza-size").text(newPizza.size);
+      $("#description").text(newPizza.toppings);
+      $("#order-total").text(total);
   });
 });
