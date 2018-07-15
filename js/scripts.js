@@ -17,6 +17,9 @@ Pizza.prototype.price = function() {
   if (this.toppings.length > 0) {
     var pizzaPrice = basePrice + (this.toppings.length *= 2);
   }
+  else if (this.toppings.length === 0) {
+    var pizzaPrice = basePrice;
+  }
   else {
     alert("please complete your order!")
   }
