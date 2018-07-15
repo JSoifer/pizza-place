@@ -1,23 +1,26 @@
-function Pizza(size, [toppings], price) {
+var basePrice = 12
+function Pizza(size, [toppings]) {
   this.size = size;
-  this.price = price;
   this.toppings = [];
 }
 var toppings = [];
 var toppingsAdd = toppings.length;
 
 Pizza.prototype.price = function() {
-  var price = 0
 
-  if (this.size === "large") {
-    price = 15;
-  } else if (this.size === "medium") {
-    price = 12;
-  for (i = 0; toppingsAdd > 0; i *= 2) {
-    price =+ i;
+  if (this.size === "medium") {
+    var pizzaPrice = basePrice;
   }
-
-  return price;
+  if (this.size === "large") {
+    var pizzaPrice = basePrice += 3;
+  }
+  if (toppingsAdd > 0) {
+    var pizzaPrice = basePrice + (this.toppings.length + 2);
+  }
+  else {
+    alert("please complete your order!")
+  }
+  return pizzaPrice;
 };
 
 
@@ -31,16 +34,15 @@ $(document).ready(function() {
     $("#pizza-order").empty();
 
     var size = $("input:radio[name=size]:checked").val();
-    $("input:checkbox[name=veggie]:checked").each(function() {
-      var veggieToppings = $(this).val();
-      toppings.push(veggieToppings);
+    $("input:checkbox[name=topping]:checked").each(function() {
+      var selectedToppings = $(this).val();
+      toppings.push(selectedToppings);
     });
-    $("input:checkbox[name=meat]:checked").each(function() {
-      var meatToppings = $(this).val();
-      toppings.push(meatToppings);
-    });
-    var newPizza = new Pizza(size, [toppings], price);
-      $("#pizza-order").text(newPizza);
+    var newPizza = new Pizza(size, [toppings]);
+    var total = newPizza.price();
+      $("#pizza-size").text(newPizza.size);
+      $("#description").text(newPizza.toppings);
+      $("#order-total").text(newPizza.price);
       $("#pizza-order").show();
   });
 });
